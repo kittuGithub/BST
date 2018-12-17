@@ -1,0 +1,29 @@
+<div class="container-fluid login-bg">
+    <mat-card class="loginBox">
+        <mat-toolbar class="login-toolbar">
+          <span class="title-center">BlueSpace Technologies</span>
+        </mat-toolbar>
+        <div class="example-container">
+          <mat-form-field>
+            <input matInput type="text" placeholder="Username*" #username />
+          </mat-form-field>
+    
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" #password />
+          </mat-form-field>
+        </div>
+        <div>
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="loginUser(username.value, password.value)"
+          >
+            Login
+          </button>
+          <div *ngIf="invalid">
+            <span colo="primary">Invalid Credentials</span>
+          </div>
+          <span style="float: right; margin-top:10px;">Forgot password?</span>
+        </div>
+      </mat-card>
+</div>
