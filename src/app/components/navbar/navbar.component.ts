@@ -110,7 +110,7 @@ export class NavbarComponent implements OnInit {
     }
 
     getTitle() {
-      const titlee = this.location.prepareExternalUrl(this.location.path());
+      let titlee = this.location.prepareExternalUrl(this.location.path());
       if (titlee.charAt(0) === '#') {
           titlee = titlee.slice( 2 );
       }
@@ -123,4 +123,11 @@ export class NavbarComponent implements OnInit {
       }
       return 'Dashboard';
     }
+
+    logout() {
+        localStorage.removeItem('loggedIn');
+        this.router.navigate(['']);
+    }
+
+
 }
