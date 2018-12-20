@@ -14,6 +14,9 @@ import { MatToolbarModule, MatFormFieldModule, MatCardModule, MatInputModule, Ma
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,15 +24,19 @@ import { AuthGuard } from './auth.guard';
     LoginPageComponent
   ],
   imports: [
+    AngularFileUploaderModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ComponentsModule,
+    FormsModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,
+    ReactiveFormsModule,
+
     HttpClientModule
   ],
   providers: [AuthService, AuthGuard],

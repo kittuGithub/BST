@@ -1,0 +1,132 @@
+<!-- <div class="container">
+    <h2>Accordion Example</h2>
+    <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="row">
+                        <div class="col-lg-2" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            <img src="../../assets/images/sanfran.jpg" class="img-thumbnail" alt="Cinque Terre">
+                        </div>
+                        <div class="col-lg-10">
+                            <span class="badge badge-primary">Ram</span>
+                        </div>
+                    </div>
+
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse in">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="row">
+                        <div class="col-lg-2" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            <img src="../../assets/images/sanfran.jpg" class="img-thumbnail" alt="Cinque Terre">
+                        </div>
+                        <div class="col-lg-10">
+                            <span class="label label-primary">Ram</span>
+                        </div>
+                    </div>
+                </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <div class="row">
+                        <div class="col-lg-2" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            <img src="../../assets/images/sanfran.jpg" class="img-thumbnail" alt="Cinque Terre">
+                        </div>
+                        <div class="col-lg-10">
+                            <span class="badge badge-primary">Ram</span>
+                        </div>
+                    </div>
+                </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+                <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container-fluid" style="margin-top:5%">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-append">
+            <button class="btn btn-success" type="submit">Go</button>
+        </div>
+    </div>
+    <div id="accordion">
+
+        <div class="card">
+            <div class="card-header">
+
+                <div class="row" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <div class="col-lg-2">
+                        <img src="../../assets/images/profile-pic.png" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div class="col-lg-8">
+                        <span class="badge badge-primary" style="margin:5px;">Resume.pdf</span>
+                        <span class="badge badge-primary" style="margin:5px;">DOB.pdf</span>
+                        <span class="badge badge-primary" style="margin:5px;">paspsort.jpeg</span>
+                        <span class="badge badge-primary" style="margin:5px;">pancard.jpeg</span>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="row"><i class="fa fa-edit"></i></div>
+                        <div class="row"><i class="fa fa-calendar-check"></i></div>
+                        <!-- <div class="row"><i class="fa fa-angle-down"></i></div> -->
+                    </div>
+                </div>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                    Lorem ipsum..
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="row" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    <div class="col-lg-2">
+                        <img src="../../assets/images/profile-pic.png" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div class="col-lg-10">
+                        <span class="badge badge-primary">Harish</span>
+                    </div>
+                </div>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    Lorem ipsum..
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="row" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    <div class="col-lg-2">
+                        <img src="../../assets/images/profile-pic.png" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
+                    </div>
+                    <div class="col-lg-10">
+                        <span class="badge badge-primary">Krishna</span>
+                    </div>
+                </div>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    Lorem ipsum..
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

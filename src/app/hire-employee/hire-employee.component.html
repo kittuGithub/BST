@@ -1,9 +1,9 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <form novalidate="" class="ng-untouched ng-pristine ng-invalid">
+    <form [formGroup]="hireForm">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
             <div class="card-header card-header-rose card-header-icon">
               <div class="card-icon">
                 <i class="material-icons">mail_outline</i>
@@ -11,49 +11,382 @@
               <h4 class="card-title">Personal Info</h4>
             </div>
             <div class="card-body">
-              <mat-form-field class="example-full-width mat-form-field ng-tns-c5-23 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid">
-                <div class="mat-form-field-wrapper">
-                  <div class="mat-form-field-flex"><!----><!---->
-                    <div class="mat-form-field-infix">
-                      <input class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-untouched ng-pristine ng-invalid" formcontrolname="email" matinput="" placeholder="Email Address *" type="email" id="mat-input-15" aria-invalid="false" aria-required="false">
-                      <span class="mat-form-field-label-wrapper"><!---->
-                        <label class="mat-form-field-label ng-tns-c5-23 mat-empty mat-form-field-empty ng-star-inserted" id="mat-form-field-label-35" for="mat-input-15" aria-owns="mat-input-15"><!----><!---->Email Address *<!----><!----></label>
-                      </span>
-                    </div><!---->
-                  </div><!---->
-                  <div class="mat-form-field-underline ng-tns-c5-23 ng-star-inserted">
-                    <span class="mat-form-field-ripple"></span>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="fn">First Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fn"
+                      formControlName="he_fn"
+                    />
                   </div>
-                  <div class="mat-form-field-subscript-wrapper"><!----><!---->
-                    <div class="mat-form-field-hint-wrapper ng-tns-c5-23 ng-trigger ng-trigger-transitionMessages ng-star-inserted" style="opacity: 1; transform: translateY(0%);"><!---->
-                      <div class="mat-form-field-hint-spacer"></div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="mn">Middle Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mn"
+                      formControlName="he_mn"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="ln">Last Name:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="ln"
+                      formControlName="he_ln"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="usr" style="margin-right: 20px;">Gender:</label>
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          value="male"
+                          formControlName="he_ge"
+                        />Male
+                      </label>
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input
+                          type="radio"
+                          class="form-check-input"
+                          value="female"
+                          formControlName="he_ge"
+                        />Female
+                      </label>
                     </div>
                   </div>
                 </div>
-              </mat-form-field>
-              <mat-form-field class="example-full-width has-label mat-form-field ng-tns-c5-24 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid">
-                <div class="mat-form-field-wrapper">
-                  <div class="mat-form-field-flex"><!----><!---->
-                    <div class="mat-form-field-infix">
-                      <input class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-untouched ng-pristine ng-invalid" formcontrolname="password" id="password" matinput="" placeholder="Password *" type="password" aria-invalid="false" aria-required="false">
-                      <span class="mat-form-field-label-wrapper"><!---->
-                        <label class="mat-form-field-label ng-tns-c5-24 mat-empty mat-form-field-empty ng-star-inserted" id="mat-form-field-label-37" for="password" aria-owns="password"><!----><!---->Password *<!----><!----></label>
-                      </span>
-                    </div><!---->
-                  </div><!---->
-                  <div class="mat-form-field-underline ng-tns-c5-24 ng-star-inserted">
-                    <span class="mat-form-field-ripple">
-                      </span>
-                    </div>
-                    <div class="mat-form-field-subscript-wrapper"><!----><!---->
-                      <div class="mat-form-field-hint-wrapper ng-tns-c5-24 ng-trigger ng-trigger-transitionMessages ng-star-inserted" style="opacity: 1; transform: translateY(0%);"><!---->
-                        <div class="mat-form-field-hint-spacer"></div>
-                      </div>
-                    </div>
+                <div class="col-lg-6">
+                  <label for="email">Email:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="email"
+                    formControlName="he_email"
+                  />
+                </div>
+              </div>
+              <div class="row" formGroupName="phonenumbers">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="hph">Home Phone:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="hph"
+                      formControlName="he_hph"
+                    />
                   </div>
-                </mat-form-field>
-                <mat-form-field class="example-full-width has-label mat-form-field ng-tns-c5-25 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid"><div class="mat-form-field-wrapper"><div class="mat-form-field-flex"><!----><!----><div class="mat-form-field-infix"><input class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-untouched ng-pristine ng-invalid" formcontrolname="confirmPassword" id="confirmPassword" matinput="" placeholder="Confirm Password *" type="password" aria-invalid="false" aria-required="false"><span class="mat-form-field-label-wrapper"><!----><label class="mat-form-field-label ng-tns-c5-25 mat-empty mat-form-field-empty ng-star-inserted" id="mat-form-field-label-39" for="confirmPassword" aria-owns="confirmPassword"><!----><!---->Confirm Password *<!----><!----></label></span></div><!----></div><!----><div class="mat-form-field-underline ng-tns-c5-25 ng-star-inserted"><span class="mat-form-field-ripple"></span></div><div class="mat-form-field-subscript-wrapper"><!----><!----><div class="mat-form-field-hint-wrapper ng-tns-c5-25 ng-trigger ng-trigger-transitionMessages ng-star-inserted" style="opacity: 1; transform: translateY(0%);"><!----><div class="mat-form-field-hint-spacer"></div></div></div></div></mat-form-field><div class="category form-category">* Required fields</div></div><div class="card-footer text-right"><div class="form-check mr-auto"><label class="form-check-label"><input class="form-check-input" type="checkbox" value=""> Subscribe to newsletter <span class="form-check-sign"><span class="check"></span></span></label></div><button class="btn btn-rose mat-raised-button" mat-raised-button="" type="submit"><span class="mat-button-wrapper">Register</span><div class="mat-button-ripple mat-ripple" matripple=""></div>
-                  <div class="mat-button-focus-overlay"></div>
-                </button>
-   
-</div>      
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="cph">Cell Phone:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="cph"
+                      formControlName="he_cph"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row" formGroupName="address">
+                <div class="col-lg-1"><label for="usr">Address:</label></div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="sadd">Street Address:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="sadd"
+                      formControlName="he_sadd"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="form-group">
+                    <label for="apt">Apartment/Unit #</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="apt"
+                      formControlName="he_apt"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="city">City</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="city"
+                      formControlName="he_city"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="form-group">
+                    <label for="pcode">Postal Code</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pcode"
+                      formControlName="he_pcode"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="dob">DOB</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="dob"
+                      formControlName="he_dob"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="mstat">Marital Status</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mstat"
+                      formControlName="he_mstat"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="gid">Govt Id Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="gid"
+                      formControlName="he_gid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-rose card-header-icon">
+              <div class="card-icon" style="margin-top:-30px;">
+                <i class="material-icons">mail_outline</i>
+              </div>
+              <h4 class="card-title">Educational Info</h4>
+            </div>
+            <div class="card-body" formGroupName="education">
+              <div class="row">
+                <div class="col-lg-4">Post Graduation</div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="pgs">Stream</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="pgs"
+                      formControlName="he_pgs"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="pgp">Percentage</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="pgp"
+                      formControlName="he_pgp"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">Graduation</div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="gs">Stream</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="gs"
+                      formControlName="he_gs"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="gp">Percentage</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="gp"
+                      formControlName="he_gp"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">+2</div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="is">Stream</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="is"
+                      formControlName="he_is"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="ip">Percentage</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="ip"
+                      formControlName="he_ip"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">SSC</div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="ss">Stream</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="ss"
+                      formControlName="he_ss"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label for="sp">Percentage</label>
+                    <input
+                      type="textarea"
+                      class="form-control"
+                      id="sp"
+                      formControlName="he_sp"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group"></div>
+              <!--
+                <div class="form-group">
+                    <label for="usr">Address:</label>
+                    <input type="textarea" class="form-control" id="add">
+                </div>
+              -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-rose card-header-icon">
+              <div class="card-icon" style="margin-top:-30px;">
+                <i class="material-icons">mail_outline</i>
+              </div>
+              <h4 class="card-title">Professional Info</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="ks">Key Skills:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="ks"
+                      formControlName="he_ks"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="exp">Experience:</label>
+                    <input type="text" class="form-control" id="exp" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-rose card-header-icon">
+              <div class="card-icon" style="margin-top:-30px;">
+                <i class="material-icons">mail_outline</i>
+              </div>
+              <h4 class="card-title">Attachments</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <label for="upload">Upload</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="upload"
+                      formControlName="he_upload"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-rose mat-raised-button pull-right"
+        mat-raised-button=""
+        (click)="hireEmployee()"
+      >
+        <span class="mat-button-wrapper">Register</span>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+      <button
+        class="btn btn-danger mat-raised-button pull-right"
+        mat-raised-button=""
+        (click)="resetForm()"
+      >
+        <span class="mat-button-wrapper">Reset</span>
+        <div class="mat-button-ripple mat-ripple" matripple=""></div>
+        <div class="mat-button-focus-overlay"></div>
+      </button>
+    </form>
+  </div>
+</div>

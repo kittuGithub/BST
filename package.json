@@ -25,6 +25,8 @@
     "@angular/platform-server": "7.0.2",
     "@angular/router": "7.0.2",
     "ajv": "6.4.0",
+    "angular-file-uploader": "^4.1.4",
+    "angular-material-fileupload": "^1.0.1",
     "arrive": "2.4.1",
     "bootstrap": "4.1.0",
     "bootstrap-material-design": "4.1.1",

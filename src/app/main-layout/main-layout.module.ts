@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MainLayoutRoutes } from './main-layout.routing'
+import { MainLayoutRoutes } from './main-layout.routing';
 
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HireEmployeeComponent } from '../hire-employee/hire-employee.component';
+import { TimesheetComponent } from '../timesheet/timesheet.component';
+import { EmployeeListComponent } from '../employee-list/employee-list.component';
+
+import { DataService } from './data-service';
 
 import {
     MatButtonModule,
@@ -27,10 +31,16 @@ import {
       MatInputModule,
       MatSelectModule,
       MatTooltipModule,
+      ReactiveFormsModule
     ],
     declarations: [
       DashboardComponent,
-      HireEmployeeComponent
+      HireEmployeeComponent,
+      TimesheetComponent,
+      EmployeeListComponent
+    ],
+    providers: [
+      DataService
     ]
   })
 

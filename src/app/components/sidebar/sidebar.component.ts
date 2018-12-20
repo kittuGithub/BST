@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -10,9 +11,9 @@ declare interface RouteInfo {
 export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: '/hireEmployee', title: 'Hire Employee',  icon: 'person', class: '' },
-    { path: '/timesheet', title: 'Timesheet',  icon: 'timer', class: '' },
+    { path: '/timeSheet', title: 'Timesheet',  icon: 'timer', class: '' },
     { path: '/immigration', title: 'Immigration',  icon: 'work', class: '' },
-    { path: '/viewemployees', title: 'Employess List',  icon: 'group', class: '' },
+    { path: '/viewEmployees', title: 'Employess List',  icon: 'group', class: '' },
     { path: '/payments', title: 'Payments',  icon: 'payment', class: '' },
     { path: '/user-profile', title: 'User Profile',  icon: 'person', class: '' },
     { path: '/table-list', title: 'Table List',  icon: 'content_paste', class: '' }
@@ -26,7 +27,7 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
@@ -36,5 +37,10 @@ export class SidebarComponent implements OnInit {
           return false;
       }
       return true;
+  }
+
+  logout() {
+    localStorage.removeItem('loggedIn');
+    this.router.navigate(['']);
   }
 }
