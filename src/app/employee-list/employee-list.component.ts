@@ -11,12 +11,10 @@ export class EmployeeListComponent implements OnInit, OnChanges {
   constructor(private ds: DataService) { }
 
   ngOnInit() {
-    this.ds.currentMessage.subscribe((message) => {
-      console.log('currentMessgae : ', message);
-      this.employeeList.push(message);
-      console.log(this.employeeList);
-    });
+    console.log('Data : ' + this.ds.getData());
+    this.employeeList = this.ds.getData();
   }
+
   ngOnChanges() {
   }
 

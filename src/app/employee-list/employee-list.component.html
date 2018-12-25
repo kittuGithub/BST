@@ -65,18 +65,18 @@
     </div>
     <div id="accordion">
 
-        <div class="card">
+        <div class="card" *ngFor="let empData of employeeList">
             <div class="card-header">
 
                 <div class="row" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
                     <div class="col-lg-2">
-                        <img src="../../assets/images/profile-pic.png" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
+                        <img src="../../assets/images/sanfran.jpg" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
                     </div>
                     <div class="col-lg-8">
-                        <span class="badge badge-primary" style="margin:5px;">Resume.pdf</span>
-                        <span class="badge badge-primary" style="margin:5px;">DOB.pdf</span>
+                        <span class="badge badge-primary" style="margin:5px;" *ngFor="let attachments of empData.he_upload">{{attachments.name}}</span>
+                        <!-- <span class="badge badge-primary" style="margin:5px;">DOB.pdf</span>
                         <span class="badge badge-primary" style="margin:5px;">paspsort.jpeg</span>
-                        <span class="badge badge-primary" style="margin:5px;">pancard.jpeg</span>
+                        <span class="badge badge-primary" style="margin:5px;">pancard.jpeg</span> -->
                     </div>
                     <div class="col-lg-2">
                         <div class="row"><i class="fa fa-edit"></i></div>
@@ -85,25 +85,138 @@
                     </div>
                 </div>
             </div>
-            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+            <div id="collapseOne" class="collapse" data-parent="#accordion">
                 <div class="card-body">
-                    Lorem ipsum..
+                    <div>
+                        <h3>Employee Details</h3>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <span class="row"><b>Name</b></span>
+                                <span class="row">{{empData.he_fn}}&nbsp;{{empData.he_mn}}&nbsp;{{empData.he_ln}}</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="row"><b>Gender</b></span>
+                                <span class="row">{{empData.he_ge}}</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="row"><b>DOB</b></span>
+                                <span class="row">{{empData.he_dob}}</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="row"><b>Home Phone</b></span>
+                                <span class="row">{{empData.phonennumbers.he_hph}}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <span class="row"><b>Email</b></span>
+                                <span class="row">{{empData.he_email}}</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="row"><b>Marital Status</b></span>
+                                <span class="row">{{empData.he_mstat}}</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="row"><b>Govt Id</b></span>
+                                <span class="row">{{empData.he_gid}}</span>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="row"><b>Cell Phone</b></span>
+                                <span class="row">{{empData.phonenumbers.he_cph}}</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="row">Address</span>
+                            <span class="row">
+                                {{empData.address.he_sadd}} , {{empDta.address.he_apt}} , {{empData.address.he_city}} , {{empData.address.p_code}}
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Employee Education</h3>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="row">
+                                    <b>Post Graduation</b>
+                                </div>
+                                <div class="row">
+                                    {{empData.education.he_pgs}} ({{empData.education.he_pgp}})
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="row">
+                                    <b>Graduation</b>
+                                </div>
+                                <div class="row">
+                                    {{empData.education.he_gs}} ({{empData.education.he_gp}})
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="row">
+                                    <b>+2</b>
+                                </div>
+                                <div class="row">
+                                    {{empData.education.he_is}} ({{empData.education.he_ip}})
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="row">
+                                    <b>10th</b>
+                                </div>
+                                <div class="row">
+                                    {{empData.education.he_ss}} ({{empData.education.he_sp}})
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Employee Experience</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <b>Skill</b>
+                                </div>
+                                <div class="row">
+                                    {{empData.he_ks}}
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <b>Experience</b>
+                                </div>
+                                <div class="row">
+                                    {{empData.he_exp}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Attachments</h3>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    {{empData.he_upload}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-header">
                 <div class="row" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
                     <div class="col-lg-2">
-                        <img src="../../assets/images/profile-pic.png" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
+                        <img src="../../assets/images/sanfran.jpg" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
                     </div>
                     <div class="col-lg-10">
-                        <span class="badge badge-primary">Harish</span>
+                        <span class="badge badge-primary">Ram</span>
                     </div>
                 </div>
             </div>
-            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+            <div id="collapseTwo" class="collapse show" data-parent="#accordion">
                 <div class="card-body">
                     Lorem ipsum..
                 </div>
@@ -114,10 +227,10 @@
             <div class="card-header">
                 <div class="row" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                     <div class="col-lg-2">
-                        <img src="../../assets/images/profile-pic.png" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
+                        <img src="../../assets/images/sanfran.jpg" width="70" height="70" class="img-thumbnail" alt="Cinque Terre">
                     </div>
                     <div class="col-lg-10">
-                        <span class="badge badge-primary">Krishna</span>
+                        <span class="badge badge-primary">Ram</span>
                     </div>
                 </div>
             </div>
@@ -126,7 +239,7 @@
                     Lorem ipsum..
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>

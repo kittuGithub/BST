@@ -47,9 +47,9 @@ export class HireEmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ds.currentMessage.subscribe(message => {
+    /*this.ds.currentMessage.subscribe(message => {
     //  console.log('hireEmployee' + message);
-    });
+    });*/
   }
   hireEmployee() {
    // console.log('hireEmployee');

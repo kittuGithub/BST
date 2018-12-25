@@ -1,392 +1,282 @@
 <div class="main-content">
-  <div class="container-fluid">
-    <form [formGroup]="hireForm">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-rose card-header-icon">
-              <div class="card-icon">
-                <i class="material-icons">mail_outline</i>
-              </div>
-              <h4 class="card-title">Personal Info</h4>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="fn">First Name:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="fn"
-                      formControlName="he_fn"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="mn">Middle Name:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="mn"
-                      formControlName="he_mn"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="ln">Last Name:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="ln"
-                      formControlName="he_ln"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label for="usr" style="margin-right: 20px;">Gender:</label>
-                    <div class="form-check-inline">
-                      <label class="form-check-label">
-                        <input
-                          type="radio"
-                          class="form-check-input"
-                          value="male"
-                          formControlName="he_ge"
-                        />Male
-                      </label>
-                    </div>
-                    <div class="form-check-inline">
-                      <label class="form-check-label">
-                        <input
-                          type="radio"
-                          class="form-check-input"
-                          value="female"
-                          formControlName="he_ge"
-                        />Female
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <label for="email">Email:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    formControlName="he_email"
-                  />
-                </div>
-              </div>
-              <div class="row" formGroupName="phonenumbers">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label for="hph">Home Phone:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="hph"
-                      formControlName="he_hph"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label for="cph">Cell Phone:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="cph"
-                      formControlName="he_cph"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row" formGroupName="address">
-                <div class="col-lg-1"><label for="usr">Address:</label></div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label for="sadd">Street Address:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="sadd"
-                      formControlName="he_sadd"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-5">
-                  <div class="form-group">
-                    <label for="apt">Apartment/Unit #</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="apt"
-                      formControlName="he_apt"
-                    />
-                  </div>
-                </div>
+    <div class="container-fluid">
+        <form [formGroup]="hireForm">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-rose card-header-icon">
+                            <div class="card-icon">
+                                <i class="material-icons">mail_outline</i>
+                            </div>
+                            <h4 class="card-title">Personal Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="fn">First Name:</label>
+                                        <input type="text" class="form-control" id="fn" formControlName="he_fn">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="mn">Middle Name:</label>
+                                        <input type="text" class="form-control" id="mn" formControlName="he_mn">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="ln">Last Name:</label>
+                                        <input type="text" class="form-control" id="ln" formControlName="he_ln">
+                                    </div>
+                                </div>
 
-                <div class="col-lg-1"></div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label for="city">City</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="city"
-                      formControlName="he_city"
-                    />
-                  </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="usr" style="margin-right: 20px;">Gender:</label>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" value="male" formControlName="he_ge">Male
+                                  </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" value="female" formControlName="he_ge">Female
+                                  </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="email">Email:</label>
+                                    <input type="text" class="form-control" id="email" formControlName="he_email">
+                                </div>
+                            </div>
+                            <div class="row" formGroupName="phonenumbers">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="hph">Home Phone:</label>
+                                        <input type="text" class="form-control" id="hph" formControlName="he_hph">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="cph">Cell Phone:</label>
+                                        <input type="text" class="form-control" id="cph" formControlName="he_cph">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" formGroupName="address">
+                                <div class="col-lg-1">
+                                    <label for="usr">Address:</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="sadd">Street Address:</label>
+                                        <input type="text" class="form-control" id="sadd" formControlName="he_sadd">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="apt">Apartment/Unit #</label>
+                                        <input type="text" class="form-control" id="apt" formControlName="he_apt">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" class="form-control" id="city" formControlName="he_city">
+                                    </div>
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="pcode">Postal Code</label>
+                                        <input type="text" class="form-control" id="pcode" formControlName="he_pcode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="dob">DOB</label>
+                                        <input type="text" class="form-control" id="dob" formControlName="he_dob">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="mstat">Marital Status</label>
+                                        <input type="text" class="form-control" id="mstat" formControlName="he_mstat">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gid">Govt Id Number</label>
+                                        <input type="text" class="form-control" id="gid" formControlName="he_gid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-5">
-                  <div class="form-group">
-                    <label for="pcode">Postal Code</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="pcode"
-                      formControlName="he_pcode"
-                    />
-                  </div>
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header card-header-rose card-header-icon">
+                            <div class="card-icon" style="margin-top:-30px;">
+                                <i class="material-icons">mail_outline</i>
+                            </div>
+                            <h4 class="card-title">Educational Info</h4>
+                        </div>
+                        <div class="card-body" formGroupName="education">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    Post Graduation
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="pgs">Stream</label>
+                                        <input type="textarea" class="form-control" id="pgs" formControlName="he_pgs">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="pgp">Percentage</label>
+                                        <input type="textarea" class="form-control" id="pgp" formControlName="he_pgp">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    Graduation
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gs">Stream</label>
+                                        <input type="textarea" class="form-control" id="gs" formControlName="he_gs">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="gp">Percentage</label>
+                                        <input type="textarea" class="form-control" id="gp" formControlName="he_gp">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    +2
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="is">Stream</label>
+                                        <input type="textarea" class="form-control" id="is" formControlName="he_is">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="ip">Percentage</label>
+                                        <input type="textarea" class="form-control" id="ip" formControlName="he_ip">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    SSC
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="ss">Stream</label>
+                                        <input type="textarea" class="form-control" id="ss" formControlName="he_ss">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label for="sp">Percentage</label>
+                                        <input type="textarea" class="form-control" id="sp" formControlName="he_sp">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                            </div>
+                            <!-- <div class="form-group">
+                                  <label for="usr">Address:</label>
+                                  <input type="textarea" class="form-control" id="add">
+                              </div> -->
+                        </div>
+
+                    </div>
+
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="dob">DOB</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="dob"
-                      formControlName="he_dob"
-                    />
-                  </div>
+                <div class="col-md-12">
+                    <div class="card">
+
+                        <div class="card-header card-header-rose card-header-icon">
+                            <div class="card-icon" style="margin-top:-30px;">
+                                <i class="material-icons">mail_outline</i>
+                            </div>
+                            <h4 class="card-title">Professional Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="ks">Key Skills:</label>
+                                        <input type="text" class="form-control" id="ks" formControlName="he_ks">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="exp">Experience:</label>
+                                        <input type="text" class="form-control" id="exp">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="mstat">Marital Status</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="mstat"
-                      formControlName="he_mstat"
-                    />
-                  </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-rose card-header-icon">
+                            <div class="card-icon" style="margin-top:-30px;">
+                                <i class="material-icons">mail_outline</i>
+                            </div>
+                            <h4 class="card-title">Attachments</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="upload">Upload</label>
+                                        <input type="file" class="form-control" id="upload" formControlName="he_upload">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="gid">Govt Id Number</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="gid"
-                      formControlName="he_gid"
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-rose card-header-icon">
-              <div class="card-icon" style="margin-top:-30px;">
-                <i class="material-icons">mail_outline</i>
-              </div>
-              <h4 class="card-title">Educational Info</h4>
-            </div>
-            <div class="card-body" formGroupName="education">
-              <div class="row">
-                <div class="col-lg-4">Post Graduation</div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="pgs">Stream</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="pgs"
-                      formControlName="he_pgs"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="pgp">Percentage</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="pgp"
-                      formControlName="he_pgp"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">Graduation</div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="gs">Stream</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="gs"
-                      formControlName="he_gs"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="gp">Percentage</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="gp"
-                      formControlName="he_gp"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">+2</div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="is">Stream</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="is"
-                      formControlName="he_is"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="ip">Percentage</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="ip"
-                      formControlName="he_ip"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-lg-4">SSC</div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="ss">Stream</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="ss"
-                      formControlName="he_ss"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="form-group">
-                    <label for="sp">Percentage</label>
-                    <input
-                      type="textarea"
-                      class="form-control"
-                      id="sp"
-                      formControlName="he_sp"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="form-group"></div>
-              <!--
-                <div class="form-group">
-                    <label for="usr">Address:</label>
-                    <input type="textarea" class="form-control" id="add">
-                </div>
-              -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-rose card-header-icon">
-              <div class="card-icon" style="margin-top:-30px;">
-                <i class="material-icons">mail_outline</i>
-              </div>
-              <h4 class="card-title">Professional Info</h4>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label for="ks">Key Skills:</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="ks"
-                      formControlName="he_ks"
-                    />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="form-group">
-                    <label for="exp">Experience:</label>
-                    <input type="text" class="form-control" id="exp" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-rose card-header-icon">
-              <div class="card-icon" style="margin-top:-30px;">
-                <i class="material-icons">mail_outline</i>
-              </div>
-              <h4 class="card-title">Attachments</h4>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="form-group">
-                    <label for="upload">Upload</label>
-                    <input
-                      type="file"
-                      class="form-control"
-                      id="upload"
-                      formControlName="he_upload"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        class="btn btn-rose mat-raised-button pull-right"
-        mat-raised-button=""
-        (click)="hireEmployee()"
-      >
-        <span class="mat-button-wrapper">Register</span>
-        <div class="mat-button-ripple mat-ripple" matripple=""></div>
-        <div class="mat-button-focus-overlay"></div>
-      </button>
-      <button
-        class="btn btn-danger mat-raised-button pull-right"
-        mat-raised-button=""
-        (click)="resetForm()"
-      >
-        <span class="mat-button-wrapper">Reset</span>
-        <div class="mat-button-ripple mat-ripple" matripple=""></div>
-        <div class="mat-button-focus-overlay"></div>
-      </button>
-    </form>
-  </div>
+            <button class="btn btn-rose mat-raised-button pull-right" mat-raised-button="" (click)="hireEmployee();">
+              <span class="mat-button-wrapper">Register</span>
+              <div class="mat-button-ripple mat-ripple" matripple=""></div>
+              <div class="mat-button-focus-overlay"></div>
+          </button>
+            <button class="btn btn-danger mat-raised-button pull-right" mat-raised-button="" (click)="resetForm();">
+                  <span class="mat-button-wrapper">Reset</span>
+                  <div class="mat-button-ripple mat-ripple" matripple=""></div>
+                  <div class="mat-button-focus-overlay"></div>
+              </button>
+        </form>
+    </div>
 </div>
