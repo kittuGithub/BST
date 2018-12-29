@@ -10,11 +10,16 @@ import { TimesheetComponent } from '../timesheet/timesheet.component';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
 
 import { DataService } from './data-service';
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import 'flatpickr/dist/flatpickr.css';
+import { FlatpickrModule } from 'angularx-flatpickr';
 import {
     MatButtonModule,
     MatInputModule,
     MatRippleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatTooltipModule,
     MatSelectModule
@@ -25,13 +30,20 @@ import {
       CommonModule,
       RouterModule.forChild(MainLayoutRoutes),
       FormsModule,
+      FlatpickrModule.forRoot(),
       MatButtonModule,
       MatRippleModule,
       MatFormFieldModule,
       MatInputModule,
       MatSelectModule,
       MatTooltipModule,
-      ReactiveFormsModule
+      MatDatepickerModule,
+      MatNativeDateModule,
+      ReactiveFormsModule,
+      CalendarModule.forRoot({
+        provide: DateAdapter,
+        useFactory: adapterFactory
+      })
     ],
     declarations: [
       DashboardComponent,

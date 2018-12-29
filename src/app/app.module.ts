@@ -13,10 +13,11 @@ import { MatToolbarModule, MatFormFieldModule, MatCardModule, MatInputModule, Ma
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
-
+// import { FlatpickrModule } from 'angularx-flatpickr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularFileUploaderModule } from 'angular-file-uploader';
-
+// import { AngularFileUploaderModule } from 'angular-file-uploader';
+// import { CalendarModule, DateAdapter } from 'angular-calendar';
+// import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,19 +25,23 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     LoginPageComponent
   ],
   imports: [
-    AngularFileUploaderModule,
+   // AngularFileUploaderModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ComponentsModule,
     FormsModule,
+    // FlatpickrModule.forRoot(),
     MatToolbarModule,
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
-
+/*    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),*/
     HttpClientModule
   ],
   providers: [AuthService, AuthGuard],

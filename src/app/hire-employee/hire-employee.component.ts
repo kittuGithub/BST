@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl  } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators  } from '@angular/forms';
 import { DataService } from '../main-layout/data-service';
 
 @Component({
@@ -11,15 +11,16 @@ export class HireEmployeeComponent implements OnInit {
   @Output() heFormEmitter: EventEmitter<any> = new EventEmitter<any>();
   hireForm = null;
   constructor(private fb: FormBuilder, private ds: DataService) {
+    const emailRegEx = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
     this.hireForm = this.fb.group({
       he_fn : [''],
       he_mn : [''],
       he_ln : [''],
       he_ge : [''],
-      he_email : [''],
+      he_email : ['', [Validators.required, Validators.pattern(emailRegEx)]],
       phonenumbers : this.fb.group({
-        he_hph : [''],
-        he_cph : ['']
+        he_hph : ['', [Validators.pattern('[0-9]{0-10}')]],
+        he_cph : ['', [Validators.pattern('[0-9]{0-10}')]]
       }),
       address : this.fb.group({
         he_sadd : [''],

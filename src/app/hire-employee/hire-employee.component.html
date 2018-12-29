@@ -50,7 +50,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="email">Email:</label>
-                                    <input type="text" class="form-control" id="email" formControlName="he_email">
+                                    <input type="text" class="form-control" id="email" formControlName="he_email" [ngClass]="hireForm.get('he_email').errors && (hireForm.get('he_email').dirty || isButtonClicked) ? 'contact-input input-error' : 'contact-input'">
                                 </div>
                             </div>
                             <div class="row" formGroupName="phonenumbers">
@@ -103,8 +103,15 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label for="dob">DOB</label>
-                                        <input type="text" class="form-control" id="dob" formControlName="he_dob">
+                                        <!--<label for="dob">DOB</label>
+                                        <input [matDatepicker]="dob" class="form-control">
+                                        <mat-datepicker #dob formControlName="he_dob"></mat-datepicker>
+                                         <input type="text" class="form-control" id="dob" formControlName="he_dob"> -->
+                                        <mat-form-field>
+                                            <input class="form-control" matInput [matDatepicker]="picker" placeholder="DOB" formControlName="he_dob">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
