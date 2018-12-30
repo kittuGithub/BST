@@ -28,7 +28,9 @@
                         ],
                         "styles": [
                             "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
-                            "src/assets/scss/material-dashboard.scss"
+                            "src/assets/scss/material-dashboard.scss",
+                            "node_modules/angular-calendar/css/angular-calendar.css",
+                            "node_modules/flatpickr/dist/flatpickr.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.js",

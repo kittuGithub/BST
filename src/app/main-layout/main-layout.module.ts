@@ -8,6 +8,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { HireEmployeeComponent } from '../hire-employee/hire-employee.component';
 import { TimesheetComponent } from '../timesheet/timesheet.component';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
+import { DialogOverviewExampleDialogComponent } from '../hire-employee/hire-employee.component';
 
 import { DataService } from './data-service';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -22,7 +23,8 @@ import {
     MatNativeDateModule,
     MatFormFieldModule,
     MatTooltipModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   } from '@angular/material';
 
   @NgModule({
@@ -39,6 +41,7 @@ import {
       MatTooltipModule,
       MatDatepickerModule,
       MatNativeDateModule,
+      MatDialogModule,
       ReactiveFormsModule,
       CalendarModule.forRoot({
         provide: DateAdapter,
@@ -49,7 +52,11 @@ import {
       DashboardComponent,
       HireEmployeeComponent,
       TimesheetComponent,
-      EmployeeListComponent
+      EmployeeListComponent,
+      DialogOverviewExampleDialogComponent
+    ],
+    entryComponents: [
+      DialogOverviewExampleDialogComponent
     ],
     providers: [
       DataService

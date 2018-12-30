@@ -1,6 +1,8 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators  } from '@angular/forms';
 import { DataService } from '../main-layout/data-service';
+
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-hire-employee',
@@ -10,7 +12,7 @@ import { DataService } from '../main-layout/data-service';
 export class HireEmployeeComponent implements OnInit {
   @Output() heFormEmitter: EventEmitter<any> = new EventEmitter<any>();
   hireForm = null;
-  constructor(private fb: FormBuilder, private ds: DataService) {
+  constructor(private fb: FormBuilder, private ds: DataService, public dialog: MatDialog) {
     const emailRegEx = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
     this.hireForm = this.fb.group({
       he_fn : [''],
@@ -57,9 +59,38 @@ export class HireEmployeeComponent implements OnInit {
    // console.log(this.hireForm.value);
    // this.heFormEmitter.emit(this.hireForm.value);
     this.ds.changeMessage(this.hireForm.value);
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+      width: '250px',
+      data: {description: 'Successfully Hired the exmployee'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.resetForm();
+    });
   }
   resetForm() {
    // console.log('Reset Form');
     this.hireForm.reset();
   }
+}
+
+export interface DialogData {
+  description: string;
+}
+
+@Component({
+  selector: 'app-dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+})
+export class DialogOverviewExampleDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }
