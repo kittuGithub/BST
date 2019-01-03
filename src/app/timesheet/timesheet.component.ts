@@ -53,6 +53,8 @@ export class TimesheetComponent implements OnInit {
 
   viewDate: Date = new Date();
 
+  timesheet: any = {};
+
   modalData: {
     action: string;
     event: CalendarEvent;
@@ -77,7 +79,7 @@ export class TimesheetComponent implements OnInit {
   refresh: Subject<any> = new Subject();
 
   events: CalendarEvent[] = [
-    {
+    /*{
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
       title: 'A 3 day event',
@@ -114,17 +116,21 @@ export class TimesheetComponent implements OnInit {
         afterEnd: true
       },
       draggable: true
-    }
+    }*/
   ];
 
-  activeDayIsOpen = true;
+  activeDayIsOpen = false;
   constructor() { }
 
   ngOnInit() {
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-    if (isSameMonth(date, this.viewDate)) {
+    const ndate = date.toLocaleDateString();
+    alert('day clicked ' + ndate);
+    this.timesheet[ndate] = 8;
+    console.log(this.timesheet);
+   /* if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
       if (
         (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
@@ -134,7 +140,7 @@ export class TimesheetComponent implements OnInit {
       } else {
         this.activeDayIsOpen = true;
       }
-    }
+    }*/
   }
 
   eventTimesChanged({
@@ -149,6 +155,7 @@ export class TimesheetComponent implements OnInit {
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
+    alert('handleEvent');
     this.modalData = { event, action };
    // this.modal.open(this.modalContent, { size: 'lg' });
   }
